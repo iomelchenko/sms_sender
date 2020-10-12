@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require './app/initializer'
+
+if ARGV.count < 3
+  raise "Please pass 3 parameters - 'message text' '+49 178 920 10 33' '+38 096 762 65 85'\n
+    first - SMS message text,\n
+    second - 'to' phone number,\n
+    third - 'from' phone number"
+end
+
+SmsSender.new.send_sms_message(ARGV[0], ARGV[1], ARGV[2])
