@@ -1,3 +1,4 @@
+require './app/sms_carrier'
 require './app/sms_sender'
 
-FROM_DEFAULT_ADDRESS = 'sms_sender@test.com'
+MESSAGE_LENGTH = 160
