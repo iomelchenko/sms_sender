@@ -1,0 +1,3 @@
+describe SmsSender do
+
+end
