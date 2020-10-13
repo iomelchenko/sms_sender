@@ -1,4 +1,10 @@
 class SmsSender
+  attr_reader :sms_carrier
+
+  def initialize(sms_carrier: ::SMS_CARRIER)
+    @sms_carrier = sms_carrier
+  end
+
   def send_sms_message(text, to, from)
     split_the_message_and_deliver(text, to, from)
   end
@@ -29,7 +35,7 @@ class SmsSender
   end
 
   def deliver_message_via_carrier(text, to, from)
-    SMS_CARRIER.deliver_message(text, to, from)
+    sms_carrier.deliver_message(text, to, from)
   end
 
   def count_of_messages(text)
