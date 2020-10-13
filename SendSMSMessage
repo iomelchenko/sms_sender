@@ -8,4 +8,6 @@ if ARGV.count < 3
     third - 'from' phone number"
 end
 
+raise "The SMS text is too long." if (ARGV[0].length / MAX_MESSAGE_LENGTH) > 99
+
 SmsSender.new.send_sms_message(ARGV[0], ARGV[1], ARGV[2])
